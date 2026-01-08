@@ -15,9 +15,10 @@ The goal of this assignment is to build a complete Machine Learning pipeline for
 * **Source:** Scikit-learn Library (Originally from UCI Machine Learning Repository)
 * **Link:** [Scikit-learn Documentation - load_breast_cancer](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)
 * **Description:**
-    * This dataset contains features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. It describes the characteristics of the cell nuclei present in the image to predict if a tumor is malignant or benign.
+    * This dataset is built from microscopic images of breast tissue samples. It tracks 30 specific characteristics of the cell nuclei—such as their size, shape, and roughness. The goal is to use these measurements to determine if a tumor is Malignant (cancerous) or Benign (safe).
     * **Target Variable:** 'target' (0 = Malignant (Cancerous), 1 = Benign (Non-Cancerous))
-    * **Number of Features:** 30 (All numeric, e.g., radius, texture, perimeter, area, smoothness, etc.)
+    * **Number of Features:** 30 - The dataset describes 10 physical properties of the cell nuclei. For each property, 3 statistics are calculated: Mean (average), SE (Standard Error/variability), and Worst (largest/most extreme value found in the sample)
+      (All numeric- radius, texture, perimeter, area, smoothness, Compactness, Concavity, Concave Points, Symmetry and Fractal Dimension)
     * **Number of Instances:** 569
 
 ## 3. Models Used & Evaluation Metrics
