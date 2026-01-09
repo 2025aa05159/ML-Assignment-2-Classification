@@ -26,7 +26,7 @@ The following six classification models were implemented and evaluated on the te
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Regression** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| **Logistic Regression** |  0.9737 | 0.9974 | 0.9722 | 0.9859 | 0.9790| 0.9439 |
 | **Decision Tree** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **KNN** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **Naive Bayes** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
@@ -53,8 +53,8 @@ project-folder/
   ├── app.py # Main Streamlit application 
   ├── requirements.txt # List of dependencies 
   ├── README.md # Project documentation 
-  └── model/ # Folder containing saved .pkl models 
-    ├── logistic_regression.pkl 
+  └── model/ # Folder containing saved .ipynb and respective .pkl  for models 
+    ├── logistic_regression.ipynb and logistic_regression.pkl 
     ├── decision_tree.pkl 
     ├── ...
 
