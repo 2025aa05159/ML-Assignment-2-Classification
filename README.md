@@ -62,7 +62,7 @@ project-folder/
 ## 6. How to Run Locally
 1.  **Clone the repository:**
     ```bash
-    git clone [Your Repo Link]
+    git clone https://github.com/2025aa05159/ML-Assignment-2-Classification.git
     ```
 2.  **Install dependencies:**
     ```bash
