@@ -3,7 +3,8 @@ import pandas as pd
 import pickle
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
+# 1. ADDED: matthews_corrcoef and roc_auc_score imports
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, matthews_corrcoef, roc_auc_score
 
 # 1. Page Configuration
 st.set_page_config(page_title="BITS ML Assignment-2 | Breast Cancer Predictor", page_icon="⚕️", layout="wide")
@@ -21,7 +22,7 @@ use_demo_data = st.sidebar.checkbox("Using Demo Data (Built-in)", value=False)
 uploaded_file = st.sidebar.file_uploader("Upload Test Data (CSV) for Breast Cancer Prediction", type=["csv"])
 
 # Model Selection Dropdown
-model_options = ["Logistic Regression"]
+model_options = ["Logistic Regression", "Decision Tree"]
 selected_model_name = st.sidebar.selectbox("Select Model", model_options)
 
 # --- SIDEBAR FOOTER ---
@@ -42,6 +43,8 @@ def load_resources(model_name):
     
     if model_name == "Logistic Regression":
         model_path = "model/logistic_regression.pkl"
+    elif model_name == "Decision Tree":
+        model_path = "model/decision_tree.pkl"
     
     try:
         with open(model_path, "rb") as f:
@@ -102,23 +105,43 @@ if uploaded_file is not None or use_demo_data:
         try:
             X_scaled = scaler.transform(X)
             
-            # Make Predictions
+            # Make Predictions (Labels)
             y_pred = model.predict(X_scaled)
-            
+
+            # Make Probability Predictions (Needed for AUC Score)
+            # We grab the probability for class 1
+            if hasattr(model, "predict_proba"):
+                y_prob = model.predict_proba(X_scaled)[:, 1]
+            else:
+                y_prob = y_pred # Fallback if model doesn't support probabilities
+
             # --- Display Evaluation Metrics ---
             st.divider()
             st.subheader(f"📈 Performance Metrics: {selected_model_name}")
             
+            # 2. CALCULATE ALL 6 METRICS
             acc = accuracy_score(y_true, y_pred)
+            auc = roc_auc_score(y_true, y_prob)
             prec = precision_score(y_true, y_pred, average='weighted')
             rec = recall_score(y_true, y_pred, average='weighted')
             f1 = f1_score(y_true, y_pred, average='weighted')
+            mcc = matthews_corrcoef(y_true, y_pred)
 
-            col1, col2, col3, col4 = st.columns(4)
-            col1.metric("Accuracy", f"{acc:.4f}")
-            col2.metric("Precision", f"{prec:.4f}")
-            col3.metric("Recall", f"{rec:.4f}")
-            col4.metric("F1 Score", f"{f1:.4f}")
+            # 3. DISPLAY ALL 6 METRICS
+            # We use 3 columns x 2 rows for a clean look
+            
+            row1_col1, row1_col2, row1_col3 = st.columns(3)
+            row2_col1, row2_col2, row2_col3 = st.columns(3)
+
+            # Row 1
+            row1_col1.metric("1. Accuracy", f"{acc:.4f}")
+            row1_col2.metric("2. AUC Score", f"{auc:.4f}")
+            row1_col3.metric("3. Precision", f"{prec:.4f}")
+            
+            # Row 2 (Added extra padding for visual separation)
+            row2_col1.metric("4. Recall", f"{rec:.4f}")
+            row2_col2.metric("5. F1 Score", f"{f1:.4f}")
+            row2_col3.metric("6. MCC Score", f"{mcc:.4f}")
 
             # --- Confusion Matrix ---
             st.divider()
