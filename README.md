@@ -26,8 +26,8 @@ The following six classification models were implemented and evaluated on the te
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Regression** |  0.9737 | 0.9974 | 0.9722 | 0.9859 | 0.9790| 0.9439 |
-| **Decision Tree** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| **Logistic Regression** |  0.9842 | 0.9974 | 0.9842 | 0.9842 | 0.9842| 0.9661|
+| **Decision Tree** | 0.9842 | 0.9863 | 0.9844 | 0.9842 | 0.9841 | 0.9663 |
 | **KNN** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **Naive Bayes** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **Random Forest** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
