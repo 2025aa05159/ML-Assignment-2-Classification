@@ -26,14 +26,14 @@ The following six classification models were implemented and evaluated on the te
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Logistic Regression** |  0.9842 | 0.9974 | 0.9842 | 0.9842 | 0.9842| 0.9661|
-| **Decision Tree** | 0.9842 | 0.9863 | 0.9844 | 0.9842 | 0.9841 | 0.9663 |
-| **KNN** | 0.9754 | 0.9937 | 0.9758 | 0.9754 | 0.9753 | 0.9475 |
+| **Logistic Regression** |  0.9737 | 0.9974 | 0.9737 | 0.9737 | 0.9736| 0.9439 |
+| **Decision Tree** | 0.9474 | 0.9324 | 0.9488 | 0.9474 | 0.9468 | 0.8885 |
+| **KNN** | 0.9649 | 0.9807 | 0.9649 | 0.9649 | 0.9649 | 0.9253 |
 | **Naive Bayes** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **Random Forest** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **XGBoost** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 
-*(Note: Replace '0.00' with your actual calculated metrics from Phase 2)*
+
 
 ## 4. Observations
 Observations on the performance of each model based on the metrics above.
@@ -49,14 +49,21 @@ Observations on the performance of each model based on the metrics above.
 
 ## 5. Project Structure
 This repository follows the required directory structure:
-project-folder/ 
-  ├── app.py # Main Streamlit application 
-  ├── requirements.txt # List of dependencies 
-  ├── README.md # Project documentation 
-  └── model/ # Folder containing saved .ipynb and respective .pkl  for models 
-    ├── logistic_regression.ipynb and logistic_regression.pkl 
-    ├── decision_tree.pkl 
-    ├── ...
+
+```text
+BITS-ML-Assignment-2/
+│
+├── app.py                        # Main Streamlit application
+├── requirements.txt              # List of Python dependencies
+├── README.md                     # Project documentation
+│
+└── model/                        # Folder containing notebooks and saved binaries
+    ├── <model>.ipynb             # Jupyter Notebook used for training & analysis
+    ├── scaler.pkl                # Saved StandardScaler object (Critical for preprocessing)
+    ├── logistic_regression.pkl   # Trained Logistic Regression model
+    ├── decision_tree.pkl         # Trained Decision Tree model
+    ├── knn_model.pkl             # Trained K-Nearest Neighbors model
+    └── naive_bayes_model.pkl     # Trained Gaussian Naive Bayes model
 
 
 ## 6. How to Run Locally
