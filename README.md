@@ -65,7 +65,7 @@ BITS-ML-Assignment-2/
     ├── knn_model.pkl             # Trained K-Nearest Neighbors model
     └── naive_bayes_model.pkl     # Trained Gaussian Naive Bayes model
 
-
+```
 ## 6. How to Run Locally
 1.  **Clone the repository:**
     ```bash
