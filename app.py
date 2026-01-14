@@ -67,11 +67,22 @@ if uploaded_file is not None or use_demo_data:
     if use_demo_data:
         # Load data directly from Sklearn
         from sklearn.datasets import load_breast_cancer
-        data = load_breast_cancer()
-        df = pd.DataFrame(data.data, columns=data.feature_names)
-        df['target'] = data.target # 0=Malignant, 1=Benign
+        from sklearn.model_selection import train_test_split
         
-        st.info("✅ Using built-in Breast Cancer Wisconsin dataset.")
+        data = load_breast_cancer()
+        X_full = pd.DataFrame(data.data, columns=data.feature_names)
+        y_full = pd.Series(data.target)
+
+        # Ignore the training part data and only keep the test data
+        _, X_test_demo, _, y_test_demo = train_test_split(
+            X_full, y_full, test_size=0.2, random_state=42
+        )
+
+          # Reconstruct the DataFrame for the App to use this test data
+        df = X_test_demo.copy()
+        df['target'] = y_test_demo  # 0=Malignant, 1=Benign
+        st.info("✅ Using ONLY the unseen Test Split (20%) of the built-in dataset.")
+   
         
         # Display preview
         st.write("### Preview of Demo Data")
