@@ -22,7 +22,7 @@ use_demo_data = st.sidebar.checkbox("Using Demo Data (Built-in)", value=False)
 uploaded_file = st.sidebar.file_uploader("Upload Test Data (CSV) for Breast Cancer Prediction", type=["csv"])
 
 # Model Selection Dropdown
-model_options = ["Logistic Regression", "Decision Tree","KNN Model"]
+model_options = ["Logistic Regression", "Decision Tree","KNN Model", "Naive Bayes"]
 selected_model_name = st.sidebar.selectbox("Select Model", model_options)
 
 # --- SIDEBAR FOOTER ---
@@ -47,6 +47,8 @@ def load_resources(model_name):
         model_path = "model/decision_tree.pkl"
     elif model_name == "KNN Model":
         model_path = "model/knn-model.pkl"
+    elif model_name == "Naive Bayes":
+        model_path = "model/naive_bayes_model.pkl"
     
     try:
         with open(model_path, "rb") as f:
