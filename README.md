@@ -79,3 +79,9 @@ BITS-ML-Assignment-2/
     ```bash
     streamlit run app.py
     ```
+	
+## 7. ⚕️ Breast Cancer Predictor
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://bits-ml-assignment-2-classification-suresh-kumar.streamlit.app/)
+
+**Live Demo:** [Click here to launch the App 🚀](https://bits-ml-assignment-2-classification-suresh-kumar.streamlit.app/)
