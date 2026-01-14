@@ -29,7 +29,7 @@ The following six classification models were implemented and evaluated on the te
 | **Logistic Regression** |  0.9737 | 0.9974 | 0.9737 | 0.9737 | 0.9736| 0.9439 |
 | **Decision Tree** | 0.9474 | 0.9324 | 0.9488 | 0.9474 | 0.9468 | 0.8885 |
 | **KNN** | 0.9649 | 0.9807 | 0.9649 | 0.9649 | 0.9649 | 0.9253 |
-| **Naive Bayes** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| **Naive Bayes** | 0.9649 |0.9974 | 0.9652 | 0.9649 | 0.9647 | 0.9253 |
 | **Random Forest** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 | **XGBoost** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 
