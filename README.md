@@ -33,19 +33,24 @@ The following six classification models were implemented and evaluated on the te
 | **Random Forest** | 0.9649 | 0.9953 | 0.9652 | 0.9649 | 0.9647 | 0.9253 |
 | **XGBoost** | 0.9561 | 0.9908 | 0.9561 | 0.9561 | 0.9560 | 0.9064|
 
+## 4. Observations & Model Comparison
 
+### **Why we chose Recall as our main metric**
+When dealing with medical data—especially cancer detection—accuracy isn't the only thing that matters. We decided to prioritize **Recall (Sensitivity)** as our most important metric.
 
-## 4. Observations
-Observations on the performance of each model based on the metrics above.
+Here is why: In this context, a **False Negative** means we tell a patient they are safe when they actually have cancer. That is the most dangerous mistake a model can make. A high Recall score means our model is minimizing those dangerous mistakes and catching as many positive cases as possible.
 
-| ML Model Name | Observation about model performance |
+### **How the models performed**
+Below are our observations on how each algorithm handled the dataset:
+
+| ML Model Name | Analysis & Key Takeaways |
 | :--- | :--- |
-| **Logistic Regression** | [e.g., Provided a baseline accuracy but struggled with non-linear relationships.] |
-| **Decision Tree** | [e.g., Showed signs of overfitting with high training accuracy but lower test accuracy.] |
-| **KNN** | [e.g., Performance varied significantly based on the value of 'k'.] |
-| **Naive Bayes** | [e.g., Performed surprisingly well/poorly given the assumption of feature independence.] |
-| **Random Forest** | [e.g., Improved stability and accuracy over the single Decision Tree.] |
-| **XGBoost** | [e.g., Achieved the highest AUC score, handling class imbalance effectively.] |
+| **Logistic Regression** | **The Champion (Recall: 97.37%).** Surprisingly, this simple linear model outperformed the more complex ones. It gave us the best Recall and Accuracy, proving that the dataset is "linearly separable" (the classes are easy to distinguish with a straight line). |
+| **Decision Tree** | **Struggled a bit (Recall: 94.74%).** This was our weakest performer. Single decision trees often "overthink" or memorize the training data (overfitting), which likely caused it to make more mistakes on the test set. |
+| **KNN** | **Solid Performance (Recall: 96.49%).** It tied for second place. By setting `k=9`, the model was able to ignore noise and focus on the local patterns effectively. |
+| **Naive Bayes** | **Better than expected (Recall: 96.49%).** Even though this model assumes all features are independent (which isn't always true in medical data), it performed impressively well, matching the complex ensemble models. |
+| **Random Forest** | **Reliable & Stable (Recall: 96.49%).** As expected, this model improved on the single Decision Tree. By averaging 100 different trees, it smoothed out the errors and gave a much more stable prediction. |
+| **XGBoost** | **Good, but not the best (Recall: 95.61%).** We often expect XGBoost to win, but in this specific case, it was slightly beaten by Logistic Regression. This shows that sometimes, a complex model is "overkill" for a smaller, cleaner dataset. |
 
 ## 5. Project Structure
 This repository follows the required directory structure:
