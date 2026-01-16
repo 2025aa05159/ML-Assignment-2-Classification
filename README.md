@@ -1,7 +1,8 @@
 # ML Assignment 2 - Classification Model Deployment
 
-**Submitted by:** [Suresh Kumar]
-**ID:** [2025aa05159]
+**Submitted by:** Suresh Kumar
+**ID:** 2025aa05159 
+**EMAIL:** 2025aa05159@wilp.bits-pilani.ac.in
 
 ## 1. Problem Statement
 The goal of this assignment is to build a complete Machine Learning pipeline for a classification problem. This involves:
@@ -36,9 +37,9 @@ The following six classification models were implemented and evaluated on the te
 ## 4. Observations & Model Comparison
 
 ### **Why we chose Recall as our main metric**
-When dealing with medical data—especially cancer detection—accuracy isn't the only thing that matters. We decided to prioritize **Recall (Sensitivity)** as our most important metric.
+When dealing with medical data—especially cancer detection—accuracy is not the only thing that matters. hence decided to prioritize **Recall (Sensitivity)** as most important metric.
 
-Here is why: In this context, a **False Negative** means we tell a patient they are safe when they actually have cancer. That is the most dangerous mistake a model can make. A high Recall score means our model is minimizing those dangerous mistakes and catching as many positive cases as possible.
+Justification: In this context, a **False Negative** means we tell a patient they are safe when they actually have cancer. That is the most dangerous mistake a model can make. A high Recall score means our model is minimizing those dangerous mistakes and catching as many positive cases as possible.
 
 ### **How the models performed**
 Below are our observations on how each algorithm handled the dataset:
