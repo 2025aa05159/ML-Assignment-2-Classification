@@ -29,9 +29,9 @@ The following six classification models were implemented and evaluated on the te
 | **Logistic Regression** |  0.9737 | 0.9974 | 0.9737 | 0.9737 | 0.9736| 0.9439 |
 | **Decision Tree** | 0.9474 | 0.9324 | 0.9488 | 0.9474 | 0.9468 | 0.8885 |
 | **KNN** | 0.9649 | 0.9807 | 0.9649 | 0.9649 | 0.9649 | 0.9253 |
-| **Naive Bayes** | 0.9649 |0.9974 | 0.9652 | 0.9649 | 0.9647 | 0.9253 |
-| **Random Forest** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
-| **XGBoost** | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| **Naive Bayes** |0.9649 | 0.9974 | 0.9652 | 0.9649 | 0.9647 | 0.9253 |
+| **Random Forest** | 0.9649 | 0.9953 | 0.9652 | 0.9649 | 0.9647 | 0.9253 |
+| **XGBoost** | 0.9561 | 0.9908 | 0.9561 | 0.9561 | 0.9560 | 0.9064|
 
 
 
@@ -64,8 +64,10 @@ BITS-ML-Assignment-2/
     ├── decision_tree.pkl         # Trained Decision Tree model
     ├── knn_model.pkl             # Trained K-Nearest Neighbors model
     └── naive_bayes_model.pkl     # Trained Gaussian Naive Bayes model
-
+    └── random_forest_model.pkl   # Trained Random Forest model
+    └── xgboost_model.pkl         # Trained XGBoost model
 ```
+
 ## 6. How to Run Locally
 1.  **Clone the repository:**
     ```bash
