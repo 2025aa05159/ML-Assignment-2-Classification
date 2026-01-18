@@ -25,6 +25,20 @@ uploaded_file = st.sidebar.file_uploader("Upload Test Data (CSV) for Breast Canc
 model_options = ["Logistic Regression", "Decision Tree","KNN Model", "Naive Bayes", "Random Forest","XGBoost"]
 selected_model_name = st.sidebar.selectbox("Select Model", model_options)
 
+
+# -- Link to download Test data  ---
+st.sidebar.markdown("---")
+st.sidebar.header("📂 Sample Data")
+st.sidebar.write("Don't have a file? Download the test dataset below:")
+
+# Direct link to the raw CSV file on GitHub
+#raw file from github
+url = "https://raw.githubusercontent.com/2025aa05159/ML-Assignment-2-Classification/main/test_data.csv"
+#download btton
+st.sidebar.link_button("📥 Download Test Data (CSV)", url)
+
+
+
 # --- SIDEBAR FOOTER ---
 st.sidebar.markdown("---") # Adds a visual separator line
 st.sidebar.markdown("### 📧 Contact Developer")
